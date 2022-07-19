@@ -14,3 +14,5 @@ const missionSlice = createSlice({
   reducers: {},
   extraReducers: {},
 });
+
+export default missionSlice.reducer;
