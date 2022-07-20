@@ -1,14 +1,19 @@
-import React from "react";
+import React from 'react';
 
-const MissionItem = () => {
+const MissionItem = (props) => {
+  const { mission_name, mission_description } = props;
+
   return (
-    <article>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </article>
+    <tr>
+      <td>{mission_name}</td>
+      <td>{mission_description}</td>
+      <td>
+        <button type="button">Active Member</button>
+      </td>
+      <td>
+        <button type="button">Join Mission</button>
+      </td>
+    </tr>
   );
 };
 
