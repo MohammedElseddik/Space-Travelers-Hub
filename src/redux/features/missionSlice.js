@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
-import fetchMissionData from "../../apis/missionsApi";
-import missionEffectAfterFetch from "../effects/missionEffects";
+import { createSlice } from '@reduxjs/toolkit';
+import fetchMissionData from '../../apis/missionsApi';
+import missionEffectAfterFetch from '../effects/missionEffects';
 
 const initialState = {
   missions: [],
@@ -8,7 +8,7 @@ const initialState = {
 };
 
 const missionSlice = createSlice({
-  name: "mission",
+  name: 'mission',
   initialState,
   reducers: {
     missionJoined: (state, { payload }) => ({
