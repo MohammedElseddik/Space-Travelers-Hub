@@ -1,14 +1,13 @@
-import axios from "axios";
-import { fetchMissionData } from "../../apis/missionsApi";
-
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
+import fetchMissionData from '../../apis/missionsApi';
 
 const initialState = {
   missionData: [],
+  isLoading: false,
 };
 
 const missionSlice = createSlice({
-  name: "mission",
+  name: 'mission',
   initialState,
   reducers: {},
   extraReducers: {

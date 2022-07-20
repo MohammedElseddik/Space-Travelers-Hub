@@ -1,16 +1,16 @@
-import { NavLink } from "react-router-dom";
-import React, { useState } from "react";
-import Logo from "../../assets/logo.png";
-import styles from "./Navbar.module.css";
+import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import Logo from '../../assets/logo.png';
+import styles from './Navbar.module.css';
 
 const getRelativeUrl = (url = window.location.href) => {
-  if (url.includes("/missions")) {
-    return "miss";
+  if (url.includes('/missions')) {
+    return 'miss';
   }
-  if (url.includes("/profile")) {
-    return "prof";
+  if (url.includes('/profile')) {
+    return 'prof';
   }
-  return "rock";
+  return 'rock';
 };
 
 const NavBar = () => {
@@ -32,7 +32,7 @@ const NavBar = () => {
             <NavLink
               to="/rockets"
               onClick={setActiveTab}
-              className={active === "rock" ? styles.Active : ""}
+              className={active === 'rock' ? styles.Active : ''}
             >
               Rockets
             </NavLink>
@@ -41,7 +41,7 @@ const NavBar = () => {
             <NavLink
               to="/missions"
               onClick={setActiveTab}
-              className={active === "miss" ? styles.Active : ""}
+              className={active === 'miss' ? styles.Active : ''}
             >
               Missions
             </NavLink>
@@ -50,7 +50,7 @@ const NavBar = () => {
             <NavLink
               to="/profile"
               onClick={setActiveTab}
-              className={active === "prof" ? styles.Active : ""}
+              className={active === 'prof' ? styles.Active : ''}
             >
               My Profile
             </NavLink>
