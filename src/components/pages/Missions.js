@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import MissionItem from './MissionItem';
-import fetchMissionData from '../../apis/missionsApi';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import MissionItem from "../MissionItem";
+import fetchMissionData from "../../apis/missionsApi";
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -11,6 +11,7 @@ const Missions = () => {
   }, []);
 
   const { missionData } = useSelector((state) => state.mission);
+  console.log("state", missionData);
 
   return (
     <div className="missionsPage">
