@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const MissionItem = (props) => {
   const { mission_name, mission_id, mission_description } = props;
