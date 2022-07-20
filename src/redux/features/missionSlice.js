@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import fetchMissionData from '../../apis/missionsApi';
-import missionEffectAfterFetch from '../effects/missionEffects';
+import { missionEffectAfterFetch } from '../effects/missionEffects';
 
 const initialState = {
   missions: [],
