@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import RocketItem from '../RocketItem';
 import { fetchRockets } from '../../redux/features/rocketSlice';
 import { getState } from '../../redux/effects/rocketEffects';
+import RocketItem from '../RocketItem';
 
 const Rockets = () => {
   const { error, rockets, status } = useSelector(getState);
