@@ -1,14 +1,14 @@
-import { createSlice } from "@reduxjs/toolkit";
-import fetchMissionData from "../../apis/missionsApi";
-import missionEffectAfterFetch from "../effects/missionEffects";
+import { createSlice } from '@reduxjs/toolkit';
+import fetchMissionData from '../../apis/missionsApi';
+import missionEffectAfterFetch from '../effects/missionEffects';
 
 const initialState = {
-  missionData: [],
+  missions: [],
   isLoading: false,
 };
 
 const missionSlice = createSlice({
-  name: "mission",
+  name: 'mission',
   initialState,
   reducers: {},
   extraReducers: {
@@ -16,11 +16,11 @@ const missionSlice = createSlice({
 
     [fetchMissionData.fulfilled]: (state, action) => ({
       ...state,
-      isLoading: false,
-      missionData: missionEffectAfterFetch(action),
+      isLoading: null,
+      missions: missionEffectAfterFetch(action),
     }),
 
-    [fetchMissionData.rejected]: (state) => ({ ...state, isLoading: false }),
+    [fetchMissionData.rejected]: (state) => ({ ...state, isLoading: null }),
   },
 });
 

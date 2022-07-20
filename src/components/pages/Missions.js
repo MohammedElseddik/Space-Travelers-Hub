@@ -1,17 +1,18 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import MissionItem from "../MissionItem";
-import fetchMissionData from "../../apis/missionsApi";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import MissionItem from '../MissionItem';
+import fetchMissionData from '../../apis/missionsApi';
 
 const Missions = () => {
+  const { missions, isLoading } = useSelector((state) => state.missions);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchMissionData());
+    if (isLoading === false) {
+      dispatch(fetchMissionData());
+    }
   }, []);
-
-  const { missionData } = useSelector((state) => state.mission);
-  console.log("state", missionData);
 
   return (
     <div className="missionsPage">
@@ -27,7 +28,7 @@ const Missions = () => {
           </tr>
         </thead>
         <tbody>
-          {missionData.map((mission) => (
+          {missions.map((mission) => (
             <MissionItem
               key={mission.mission_id}
               mission_name={mission.mission_name}
