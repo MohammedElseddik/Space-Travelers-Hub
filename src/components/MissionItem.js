@@ -1,27 +1,44 @@
-import React from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { missionJoined } from '../redux/features/missionSlice';
 
-const MissionItem = (props) => {
-  const { mission_name, mission_id, mission_description } = props;
+const MissionItem = ({ mission }) => {
+  const dispatch = useDispatch();
+
+  const {
+    mission_name, mission_id, description, reserved,
+  } = mission;
+  const [membership, actionable] = (
+    reserved
+      ? ['Active Member', 'Leave Mission']
+      : ['NOT A MEMBER', 'Join Mission']
+  );
+
+  const onClick = () => {
+    dispatch(missionJoined(mission_id));
+  };
 
   return (
-    <tr id={mission_id}>
+    <tr>
       <td>{mission_name}</td>
-      <td>{mission_description}</td>
+      <td>{description}</td>
       <td>
-        <button type="button">Active Member</button>
+        <span>{membership}</span>
       </td>
       <td>
-        <button type="button">Join Mission</button>
+        <button type="button" onClick={onClick}>{actionable}</button>
       </td>
     </tr>
   );
 };
 
 MissionItem.propTypes = {
-  mission_name: PropTypes.string.isRequired,
-  mission_id: PropTypes.string.isRequired,
-  mission_description: PropTypes.string.isRequired,
+  mission: PropTypes.shape({
+    mission_name: PropTypes.string.isRequired,
+    mission_id: PropTypes.string.isRequired,
+    reserved: PropTypes.bool,
+    description: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default MissionItem;
