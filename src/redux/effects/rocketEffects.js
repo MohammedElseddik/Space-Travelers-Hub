@@ -1,10 +1,10 @@
 export const rocketEffectAfterFetch = ({ data }) => data.map(
   ({
-    rocket_id, rocket_name, rocket_type, flickr_images,
+    id, rocket_name, description, flickr_images,
   }) => ({
-    id: rocket_id,
+    id,
     name: rocket_name,
-    type: rocket_type,
+    description,
     flickr_images,
   }),
 );

@@ -5,6 +5,7 @@ const RocketItem = ({ rocket }) => (
     <img src={rocket.flickr_images[0]} alt="rocket" />
     <div>
       <h2>{rocket.name}</h2>
+      <p>{rocket.description}</p>
       <button type="button">Reserve Rocket</button>
     </div>
   </div>
@@ -12,9 +13,9 @@ const RocketItem = ({ rocket }) => (
 
 RocketItem.propTypes = {
   rocket: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
     flickr_images: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   }).isRequired,
 };
