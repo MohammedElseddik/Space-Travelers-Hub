@@ -22,7 +22,7 @@ const MissionItem = ({ mission }) => {
       <td>{mission_name}</td>
       <td>{description}</td>
       <td>
-        {reserved ? <span>Active Member</span> : <span>Leave Mission</span>}
+        {reserved ? <span>Active Member</span> : <span>NOT A MEMBER</span>}
       </td>
       <td>
         {reserved ? (
