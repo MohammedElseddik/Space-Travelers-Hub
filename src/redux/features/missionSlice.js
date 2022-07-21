@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import fetchMissionData from '../../apis/missionsApi';
 import {
   missionEffectAfterFetch,
-  reservationEffect
+  reservationEffect,
 } from '../effects/missionEffects';
 
 const initialState = {

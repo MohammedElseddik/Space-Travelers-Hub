@@ -11,7 +11,7 @@ export const reservationEffect = ({ missions }, { payload }) => missions.map(
     mission.mission_id !== payload
       ? mission
       : { ...mission, reserved: !mission.reserved }
-  )
+  ),
 );
 
 export const selectAllJoined = ({ missions }) => ({
