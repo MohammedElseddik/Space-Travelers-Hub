@@ -1,8 +1,9 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import render from './utils/redux-test-utils';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders App links', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const links = screen.getAllByRole('link');
+  expect(links).toHaveLength(4);
 });
