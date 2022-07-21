@@ -17,7 +17,7 @@ const rocketSlice = createSlice({
   name: 'missions',
   initialState,
   reducers: {
-    rocketCancelled: (state, { payload }) => ({
+    rocketCanceled: (state, { payload }) => ({
       ...state,
       rockets: state.rockets.map((rocket) => {
         if (rocket.id !== payload) {
@@ -38,14 +38,14 @@ const rocketSlice = createSlice({
   },
   extraReducers: {
     [fetchRockets.pending]: (state) => ({ ...state, status: 'loading' }),
-    [fetchRockets.fulfilled]: (state, { payload }) => ({
+    [fetchRockets.fulfilled]: (state, action) => ({
       ...state,
       status: 'complete',
-      rockets: rocketEffectAfterFetch(payload),
+      rockets: rocketEffectAfterFetch(action),
     }),
     [fetchRockets.rejected]: (state, { error }) => ({
       ...state,
-      error: error.message,
+      error,
       status: 'failed',
     }),
   },
@@ -53,7 +53,7 @@ const rocketSlice = createSlice({
 
 export const {
   rocketReserved,
-  rocketCancelled,
+  rocketCanceled,
 } = rocketSlice.actions;
 
 export default rocketSlice.reducer;

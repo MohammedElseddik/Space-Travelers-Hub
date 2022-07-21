@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
-  rocketCancelled,
+  rocketCanceled,
   rocketReserved,
 } from '../redux/features/rocketSlice';
 
@@ -11,7 +11,7 @@ const RocketItem = ({ rocket }) => {
   const dispatch = useDispatch();
 
   const onClick = () => {
-    dispatch(rocketCancelled(rocket.id));
+    dispatch(rocketCanceled(rocket.id));
   };
 
   const reserveRocketHandler = () => {
@@ -19,17 +19,17 @@ const RocketItem = ({ rocket }) => {
   };
 
   const {
-    name, description, flickr_images, reserved,
+    name, details, imageUrl, reserved,
   } = rocket;
 
   return (
     <div className={styles.RocketItem}>
-      <img src={flickr_images[0]} alt={name} />
+      <img src={imageUrl} alt={name} />
       <div>
         <h2>{name}</h2>
         <p>
           {reserved && <span>Reserved</span>}
-          {description}
+          {details}
         </p>
         {reserved
           ? (
@@ -52,8 +52,8 @@ RocketItem.propTypes = {
     reserved: PropTypes.bool,
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    flickr_images: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    details: PropTypes.string.isRequired,
+    imageUrl: PropTypes.string.isRequired,
   }).isRequired,
 };
 
