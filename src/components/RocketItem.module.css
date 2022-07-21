@@ -1,0 +1,51 @@
+.RocketItem {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  border: solid 1px #e8e8e880;
+}
+
+.RocketItem img {
+  max-width: 200px;
+  border-radius: 5px 0 0 5px;
+}
+
+.RocketItem > div {
+  flex-grow: 1;
+  padding: 5px 10px 10px;
+}
+
+.RocketItem h2 {
+  margin: 0;
+}
+
+.RocketItem p {
+  line-height: 24px;
+}
+
+.RocketItem span {
+  color: #fff;
+  font-size: 12px;
+  margin-right: 5px;
+  border-radius: 4px;
+  padding: 0.12rem 0.28rem;
+  background-color: #1dadad;
+}
+
+.RocketItem button {
+  letter-spacing: 0.5px;
+  font-size: 0.813rem;
+  font-weight: 300;
+  color: #fff;
+  background-color: #0290ff;
+  padding: 0.38rem 0.813rem;
+}
+
+.RocketItem button[reserved="true"] {
+  border: solid 1px #e3e3e3;
+  color: black;
+  opacity: 0.6;
+  background-color: #fafafa;
+}

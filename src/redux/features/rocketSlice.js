@@ -17,18 +17,25 @@ const rocketSlice = createSlice({
   name: 'missions',
   initialState,
   reducers: {
+    rocketCancelled: (state, { payload }) => ({
+      ...state,
+      rockets: state.rockets.map((rocket) => {
+        if (rocket.id !== payload) {
+          return rocket;
+        }
+        return { ...rocket, reserved: false };
+      }),
+    }),
     rocketReserved: (state, action) => ({
       ...state,
       rockets: state.rockets.map((rocket) => {
         if (rocket.id !== action.payload) {
           return rocket;
         }
-
         return { ...rocket, reserved: true };
       }),
     }),
   },
-
   extraReducers: {
     [fetchRockets.pending]: (state) => ({ ...state, status: 'loading' }),
     [fetchRockets.fulfilled]: (state, { payload }) => ({
@@ -44,6 +51,9 @@ const rocketSlice = createSlice({
   },
 });
 
-export const { rocketReserved } = rocketSlice.actions;
+export const {
+  rocketReserved,
+  rocketCancelled,
+} = rocketSlice.actions;
 
 export default rocketSlice.reducer;
