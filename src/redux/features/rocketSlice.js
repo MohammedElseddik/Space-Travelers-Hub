@@ -1,6 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getAllRockets } from '../../apis/rocketsApi';
-import { rocketEffectAfterFetch } from '../effects/rocketEffects';
+import {
+  rocketEffectAfterFetch,
+  reservationEffect,
+} from '../effects/rocketEffects';
 
 const initialState = {
   rockets: [],
@@ -17,23 +20,13 @@ const rocketSlice = createSlice({
   name: 'missions',
   initialState,
   reducers: {
-    rocketCanceled: (state, { payload }) => ({
+    rocketCanceled: (state, action) => ({
       ...state,
-      rockets: state.rockets.map((rocket) => {
-        if (rocket.id !== payload) {
-          return rocket;
-        }
-        return { ...rocket, reserved: false };
-      }),
+      rockets: reservationEffect(state, action),
     }),
     rocketReserved: (state, action) => ({
       ...state,
-      rockets: state.rockets.map((rocket) => {
-        if (rocket.id !== action.payload) {
-          return rocket;
-        }
-        return { ...rocket, reserved: true };
-      }),
+      rockets: reservationEffect(state, action),
     }),
   },
   extraReducers: {
