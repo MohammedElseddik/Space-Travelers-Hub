@@ -1,13 +1,15 @@
-import { useDispatch } from "react-redux";
-import PropTypes from "prop-types";
-import { missionJoined, missionLeaved } from "../redux/features/missionSlice";
+import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+import { missionJoined, missionLeaved } from '../redux/features/missionSlice';
 
-import styles from "./MissionItem.module.css";
+import styles from './MissionItem.module.css';
 
 const MissionItem = ({ mission }) => {
   const dispatch = useDispatch();
 
-  const { mission_name, mission_id, description, reserved } = mission;
+  const {
+    mission_name, mission_id, description, reserved,
+  } = mission;
 
   const joinMissionHandler = () => {
     dispatch(missionJoined(mission_id));
@@ -36,7 +38,7 @@ const MissionItem = ({ mission }) => {
         {reserved ? (
           <button
             type="button"
-            className={styles["leave-btn"]}
+            className={styles['leave-btn']}
             onClick={LeaveMissionHandler}
           >
             Leave Mission
@@ -44,7 +46,7 @@ const MissionItem = ({ mission }) => {
         ) : (
           <button
             type="button"
-            className={styles["join-btn"]}
+            className={styles['join-btn']}
             onClick={joinMissionHandler}
           >
             Join Mission
