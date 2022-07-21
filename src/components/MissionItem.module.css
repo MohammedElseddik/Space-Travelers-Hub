@@ -8,7 +8,6 @@ td {
   font-weight: 700;
   font-size: 1rem;
   padding: 1rem;
-  text-align: left;
 }
 
 .description {
@@ -23,7 +22,6 @@ button {
   padding: 1rem;
   border: 1.5px solid rgb(185, 185, 185);
   border-radius: 0.15rem;
-  margin: 1rem;
 }
 
 .leave-btn {
@@ -50,6 +48,6 @@ button {
   background-color: rgb(31, 194, 194);
 }
 
-.not-member {
+.notmember {
   background-color: rgb(109, 109, 109);
 }

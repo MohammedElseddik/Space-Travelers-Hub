@@ -1,15 +1,13 @@
-import { useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
-import { missionJoined, missionLeaved } from '../redux/features/missionSlice';
+import { useDispatch } from "react-redux";
+import PropTypes from "prop-types";
+import { missionJoined, missionLeaved } from "../redux/features/missionSlice";
 
-import './MissionItem.css';
+import styles from "./MissionItem.module.css";
 
 const MissionItem = ({ mission }) => {
   const dispatch = useDispatch();
 
-  const {
-    mission_name, mission_id, description, reserved,
-  } = mission;
+  const { mission_name, mission_id, description, reserved } = mission;
 
   const joinMissionHandler = () => {
     dispatch(missionJoined(mission_id));
@@ -21,20 +19,24 @@ const MissionItem = ({ mission }) => {
 
   return (
     <tr>
-      <td className="name">{mission_name}</td>
-      <td className="description">{description}</td>
+      <td className={styles.name}>{mission_name}</td>
+      <td className={styles.description}>{description}</td>
       <td>
         {reserved ? (
-          <span className="status active">Active Member</span>
+          <span className={`${styles.status} ${styles.active}`}>
+            Active Member
+          </span>
         ) : (
-          <span className="status not-member">NOT A MEMBER</span>
+          <span className={`${styles.status} ${styles.notmember}`}>
+            NOT A MEMBER
+          </span>
         )}
       </td>
       <td>
         {reserved ? (
           <button
             type="button"
-            className="leave-btn"
+            className={styles["leave-btn"]}
             onClick={LeaveMissionHandler}
           >
             Leave Mission
@@ -42,7 +44,7 @@ const MissionItem = ({ mission }) => {
         ) : (
           <button
             type="button"
-            className="join-btn"
+            className={styles["join-btn"]}
             onClick={joinMissionHandler}
           >
             Join Mission
