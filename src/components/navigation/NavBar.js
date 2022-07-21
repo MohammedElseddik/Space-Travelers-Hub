@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import React, { useState } from 'react';
 import Logo from '../../assets/logo.png';
+
 import styles from './Navbar.module.css';
 
 const getRelativeUrl = (url = window.location.href) => {
@@ -21,13 +22,17 @@ const NavBar = () => {
   };
 
   return (
-    <header>
-      <nav>
-        <NavLink to="/" onClick={setActiveTab}>
-          <img src={Logo} alt="logo" />
+    <header className={styles['herder-nav']}>
+      <nav className={styles.navbar}>
+        <NavLink
+          className={styles['logo-container']}
+          to="/"
+          onClick={setActiveTab}
+        >
+          <img className={styles.logo} src={Logo} alt="logo" />
           <h1>Space Travelers&apos; Hub</h1>
         </NavLink>
-        <ul>
+        <ul className={styles.nav__items}>
           <li>
             <NavLink
               to="/rockets"
@@ -46,6 +51,7 @@ const NavBar = () => {
               Missions
             </NavLink>
           </li>
+          <div className={styles['vertical-line']} />
           <li>
             <NavLink
               to="/profile"

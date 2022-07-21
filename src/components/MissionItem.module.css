@@ -1,0 +1,53 @@
+td {
+  padding: 2rem;
+  border-collapse: collapse;
+  border: 1px solid rgba(128, 128, 128, 0.397);
+}
+
+.name {
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.description {
+  line-height: 1.5;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+button {
+  background-color: white;
+  width: max-content;
+  padding: 1rem;
+  border: 1.5px solid rgb(185, 185, 185);
+  border-radius: 0.15rem;
+}
+
+.leave-btn {
+  border: 1px solid red;
+  color: red;
+}
+
+.join-btn {
+  border: 1px solid black;
+  color: black;
+  background-color: rgb(214, 214, 214);
+}
+
+.status {
+  display: inline-block;
+  width: max-content;
+  color: white;
+  font-weight: 700;
+  padding: 0.3rem;
+  border-radius: 4px;
+}
+
+.active {
+  background-color: rgb(31, 194, 194);
+}
+
+.notmember {
+  background-color: rgb(109, 109, 109);
+}

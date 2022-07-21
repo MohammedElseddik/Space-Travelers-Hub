@@ -2,4 +2,41 @@
   color: blue;
   font-weight: 600;
   font-size: 18px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid blue;
+}
+
+.herder-nav {
+  padding: 1rem 2rem;
+  border-bottom: 2px solid rgb(203, 203, 203);
+  margin-bottom: 20px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+}
+
+.logo {
+  width: 5rem;
+  margin-right: 1rem;
+}
+
+.nav__items {
+  display: flex;
+  align-items: center;
+}
+
+.nav__items li {
+  margin: 1rem;
+}
+
+.vertical-line {
+  border-left: 2px solid gray;
+  height: 5px;
 }

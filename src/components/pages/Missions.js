@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import MissionItem from '../MissionItem';
 import fetchMissionData from '../../apis/missionsApi';
 
+import styles from './Missions.module.css';
+
 const Missions = () => {
   const { missions, isLoading } = useSelector((state) => state.missions);
 
@@ -15,7 +17,7 @@ const Missions = () => {
   }, []);
 
   return (
-    <div className="missionsPage">
+    <div className={styles.missions}>
       <table>
         <thead>
           <tr>
