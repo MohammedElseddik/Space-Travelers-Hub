@@ -1,15 +1,35 @@
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { rocketReserved } from '../redux/features/rocketSlice';
 
-const RocketItem = ({ rocket }) => (
-  <div>
-    <img src={rocket.flickr_images[0]} alt="rocket" />
+const RocketItem = ({ rocket }) => {
+  const dispatch = useDispatch();
+
+  const {
+    id, name, description, flickr_images, reserved,
+  } = rocket;
+
+  const reserveRocketHandler = () => {
+    dispatch(rocketReserved(id));
+  };
+
+  return (
     <div>
-      <h2>{rocket.name}</h2>
-      <p>{rocket.description}</p>
-      <button type="button">Reserve Rocket</button>
+      <img src={flickr_images[0]} alt="rocket" />
+      <div>
+        <h2>{name}</h2>
+        <p>{description}</p>
+        {reserved ? (
+          <button type="button">Cancel Reservation</button>
+        ) : (
+          <button type="button" onClick={reserveRocketHandler}>
+            Reserve Rocket
+          </button>
+        )}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 RocketItem.propTypes = {
   rocket: PropTypes.shape({
