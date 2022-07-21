@@ -1,6 +1,6 @@
 # Space-Travelers-Hub
 
-An app that allows users to manage space rocket missions.
+`Space Travelers's Hub` is a multi web-page app where users can view occurring rocket missions, and also make and cancel rocket reservations, join missions, and dropout of missions. The app enables users through `My Profile` portal to view their joined missions and reserved rockets. 
 
 
 ## Built With
@@ -13,11 +13,6 @@ An app that allows users to manage space rocket missions.
 - APIs
 
 
-## Live Demo
-
-_live demo links go here_
-
-
 ## Getting Started
 
 To get a copy of this project running on your local computer, do the followings:
@@ -25,7 +20,7 @@ To get a copy of this project running on your local computer, do the followings:
 ### Prerequisites
 
 - Must have a working computer
-- A Web-Browser installed (Chrome - Recommended)
+- A web browser installed (Chrome - Recommended)
 
 ### Setup
 
@@ -63,10 +58,6 @@ Open _Terminal/Shell_ inside your _VSCode_ and run
   $~ npx eslint . --fix
   $~ npx stylelint "**/*.{css,scss}" --fix
 ```
-
-## Deployment
-
-_deployed version link goes here_
 
 
 ## Authors
