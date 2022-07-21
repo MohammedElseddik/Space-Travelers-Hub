@@ -13,7 +13,3 @@ export const reservationEffect = ({ missions }, { payload }) => missions.map(
       : { ...mission, reserved: !mission.reserved }
   ),
 );
-
-export const selectAllJoined = ({ missions }) => ({
-  missions: missions.missions.filter(({ reserved }) => reserved),
-});

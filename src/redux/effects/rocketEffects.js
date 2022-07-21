@@ -15,8 +15,4 @@ export const reservationEffect = ({ rockets }, { payload }) => rockets.map(
   ),
 );
 
-export const selectAllJoinedRockets = ({ rockets }) => ({
-  rockets: rockets.rockets.filter(({ reserved }) => reserved),
-});
-
 export const getState = ({ rockets }) => rockets;
