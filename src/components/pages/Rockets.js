@@ -1,8 +1,8 @@
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import RocketItem from "../RocketItem";
-import { fetchRockets } from "../../redux/features/rocketSlice";
-import { getState } from "../../redux/effects/rocketEffects";
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import RocketItem from '../RocketItem';
+import { fetchRockets } from '../../redux/features/rocketSlice';
+import { getState } from '../../redux/effects/rocketEffects';
 
 const Rockets = () => {
   const { error, rockets, status } = useSelector(getState);
@@ -10,12 +10,12 @@ const Rockets = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (status === "idle") {
+    if (status === 'idle') {
       dispatch(fetchRockets());
     }
   }, []);
 
-  const isWait = ["idle", "loading"].includes(status);
+  const isWait = ['idle', 'loading'].includes(status);
 
   return (
     <div>
