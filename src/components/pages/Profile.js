@@ -20,7 +20,7 @@ const Profile = () => {
             ))}
           </ul>
         )}
-        {isMissionsEmpty && <p>No Missions</p>}
+        {isMissionsEmpty && <p>No joined missions</p>}
       </div>
       <div>
         <h2>My Rockets</h2>
@@ -31,7 +31,7 @@ const Profile = () => {
             ))}
           </ul>
         )}
-        {isRocketsEmpty && <p>No Missions</p>}
+        {isRocketsEmpty && <p>No joined rockets</p>}
       </div>
     </section>
   );

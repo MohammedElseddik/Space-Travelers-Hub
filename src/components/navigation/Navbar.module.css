@@ -1,9 +1,9 @@
 .Active {
   color: blue;
   font-weight: 600;
-  font-size: 18px;
-  padding-bottom: 5px;
-  border-bottom: 2px solid blue;
+  font-size: 16.5px;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid blue;
 }
 
 .herder-nav {
@@ -20,6 +20,7 @@
 
 .logo-container {
   display: flex;
+  align-items: center;
 }
 
 .logo {
@@ -33,10 +34,11 @@
 }
 
 .nav__items li {
-  margin: 1rem;
+  margin: 0 0.8rem;
 }
 
 .vertical-line {
   border-left: 2px solid gray;
-  height: 5px;
+  margin: 0 0.3rem !important;
+  padding: 0.7rem 0;
 }

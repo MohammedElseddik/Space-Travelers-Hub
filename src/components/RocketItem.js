@@ -10,7 +10,7 @@ import styles from './RocketItem.module.css';
 const RocketItem = ({ rocket }) => {
   const dispatch = useDispatch();
 
-  const onClick = () => {
+  const onCancel = () => {
     dispatch(rocketCanceled(rocket.id));
   };
 
@@ -33,7 +33,7 @@ const RocketItem = ({ rocket }) => {
         </p>
         {reserved
           ? (
-            <button type="button" onClick={onClick} reserved="true">
+            <button type="button" onClick={onCancel} reserved="true">
               Cancel Reservation
             </button>
           )
