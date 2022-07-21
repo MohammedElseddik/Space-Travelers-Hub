@@ -6,6 +6,7 @@ import { getState } from '../../redux/effects/rocketEffects';
 
 const Rockets = () => {
   const { error, rockets, status } = useSelector(getState);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
