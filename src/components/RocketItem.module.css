@@ -40,8 +40,8 @@
 }
 
 .RocketItem button[reserved="true"] {
-  border: solid 1px #e8e8e8;
+  border: solid 1px #e3e3e3;
   color: black;
-  opacity: 0.4;
+  opacity: 0.6;
   background-color: #fafafa;
 }

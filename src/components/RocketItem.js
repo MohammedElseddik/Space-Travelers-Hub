@@ -1,6 +1,9 @@
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { rocketCancelled } from '../redux/features/rocketSlice';
+import {
+  rocketCancelled,
+  rocketReserved,
+} from '../redux/features/rocketSlice';
 
 import styles from './RocketItem.module.css';
 
@@ -11,10 +14,13 @@ const RocketItem = ({ rocket }) => {
     dispatch(rocketCancelled(rocket.id));
   };
 
+  const reserveRocketHandler = () => {
+    dispatch(rocketReserved(rocket.id));
+  };
+
   const {
     name, description, flickr_images, reserved,
   } = rocket;
-  const buttonText = reserved ? 'Cancel Reservation' : 'Reserve Rocket';
 
   return (
     <div className={styles.RocketItem}>
@@ -25,9 +31,17 @@ const RocketItem = ({ rocket }) => {
           {reserved && <span>Reserved</span>}
           {description}
         </p>
-        <button type="button" onClick={onClick} reserved={`${reserved}`}>
-          {buttonText}
-        </button>
+        {reserved
+          ? (
+            <button type="button" onClick={onClick} reserved="true">
+              Cancel Reservation
+            </button>
+          )
+          : (
+            <button type="button" onClick={reserveRocketHandler}>
+              Reserve Rocket
+            </button>
+          )}
       </div>
     </div>
   );

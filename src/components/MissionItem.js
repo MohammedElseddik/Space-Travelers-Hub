@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { missionJoined } from '../redux/features/missionSlice';
+import { missionJoined, missionLeaved } from '../redux/features/missionSlice';
 
 const MissionItem = ({ mission }) => {
   const dispatch = useDispatch();
@@ -8,14 +8,13 @@ const MissionItem = ({ mission }) => {
   const {
     mission_name, mission_id, description, reserved,
   } = mission;
-  const [membership, actionable] = (
-    reserved
-      ? ['Active Member', 'Leave Mission']
-      : ['NOT A MEMBER', 'Join Mission']
-  );
 
-  const onClick = () => {
+  const joinMissionHandler = () => {
     dispatch(missionJoined(mission_id));
+  };
+
+  const LeaveMissionHandler = () => {
+    dispatch(missionLeaved(mission_id));
   };
 
   return (
@@ -23,10 +22,18 @@ const MissionItem = ({ mission }) => {
       <td>{mission_name}</td>
       <td>{description}</td>
       <td>
-        <span>{membership}</span>
+        {reserved ? <span>Active Member</span> : <span>NOT A MEMBER</span>}
       </td>
       <td>
-        <button type="button" onClick={onClick}>{actionable}</button>
+        {reserved ? (
+          <button type="button" onClick={LeaveMissionHandler}>
+            Leave Mission
+          </button>
+        ) : (
+          <button type="button" onClick={joinMissionHandler}>
+            Join Mission
+          </button>
+        )}
       </td>
     </tr>
   );
