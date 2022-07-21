@@ -1,0 +1,39 @@
+.missions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.missions table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 2px solid #ddd;
+  font-weight: bold;
+  text-align: left;
+  font-size: 1.3rem;
+  padding: 23rem;
+}
+
+.mission thead tr {
+  border: 1px solid #ddd;
+}
+
+.missions tbody tr:nth-child(odd) {
+  background-color: rgb(185, 185, 185);
+}
+
+.mission button {
+  background-color: white;
+  width: max-content;
+  padding: 0.3rem;
+  border: 1.5px solid rgb(185, 185, 185);
+  border-radius: 0.15rem;
+  margin: 1rem;
+}
+
+.mission th {
+  padding: 20px;
+  font-size: 1.4rem;
+  border: 1px solid #ddd;
+}

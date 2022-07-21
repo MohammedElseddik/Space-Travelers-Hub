@@ -1,0 +1,17 @@
+.missionItem td {
+  padding: 1rem;
+  border-collapse: collapse;
+  border: 1px solid rgba(128, 128, 128, 0.397);
+}
+
+.name {
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.description {
+  line-height: 1.5;
+  font-size: 1rem;
+  padding: 1rem 0;
+}
