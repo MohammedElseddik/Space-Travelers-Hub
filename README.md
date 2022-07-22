@@ -1,6 +1,8 @@
 # Space-Travelers-Hub
 
-`Space Travelers's Hub` is a multi web-page app where users can view occurring rocket missions, and also make and cancel rocket reservations, join missions, and dropout of missions. The app enables users through `My Profile` portal to view their joined missions and reserved rockets. 
+`Space Travelers's Hub` is a multi web-page app where users can view occurring rocket missions, and also make and cancel rocket reservations, join missions, and dropout of missions. The app enables users through `My Profile` portal to view their joined missions and reserved rockets.
+
+![App Screenshot](./app_screenshot.png)
 
 
 ## Built With
