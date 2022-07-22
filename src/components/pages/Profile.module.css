@@ -1,7 +1,12 @@
 .Profile {
   display: flex;
-  gap: 25px;
-  padding: 1.25rem;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 45px;
+}
+
+.container {
+  width: 45%;
 }
 
 .Profile ul,
@@ -12,18 +17,18 @@
 }
 
 .Profile li {
-  padding: 10px;
-  padding-left: 15px;
+  padding: 1rem;
   border-bottom: solid 1px #e8e8e8;
 }
 
 .Profile h2 {
-  padding: 10px 2.125rem;
+  font-size: 1.3rem;
+  font-weight: 700;
 }
 
 .Profile p {
-  margin: 0;
-  padding: 1.025rem;
+  margin-top: 1rem;
+  padding: 1rem;
   text-align: center;
   opacity: 0.3;
   font-size: 20px;

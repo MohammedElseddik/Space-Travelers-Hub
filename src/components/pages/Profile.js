@@ -11,7 +11,7 @@ const Profile = () => {
 
   return (
     <section className={styles.Profile}>
-      <div>
+      <div className={styles.container}>
         <h2>My Missions</h2>
         {!isMissionsEmpty && (
           <ul>
@@ -22,7 +22,8 @@ const Profile = () => {
         )}
         {isMissionsEmpty && <p>No joined missions</p>}
       </div>
-      <div>
+
+      <div className={styles.container}>
         <h2>My Rockets</h2>
         {!isRocketsEmpty && (
           <ul>
