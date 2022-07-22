@@ -1,0 +1,35 @@
+.Profile {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 45px;
+}
+
+.container {
+  width: 45%;
+}
+
+.Profile ul,
+.Profile p {
+  background-color: #fff;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+}
+
+.Profile li {
+  padding: 1rem;
+  border-bottom: solid 1px #e8e8e8;
+}
+
+.Profile h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.Profile p {
+  margin-top: 1rem;
+  padding: 1rem;
+  text-align: center;
+  opacity: 0.3;
+  font-size: 20px;
+}

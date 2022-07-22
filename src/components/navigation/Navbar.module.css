@@ -1,0 +1,44 @@
+.Active {
+  color: blue;
+  font-weight: 600;
+  font-size: 16.5px;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid blue;
+}
+
+.herder-nav {
+  padding: 1rem 2rem;
+  border-bottom: 2px solid rgb(203, 203, 203);
+  margin-bottom: 20px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 5rem;
+  margin-right: 1rem;
+}
+
+.nav__items {
+  display: flex;
+  align-items: center;
+}
+
+.nav__items li {
+  margin: 0 0.8rem;
+}
+
+.vertical-line {
+  border-left: 2px solid gray;
+  margin: 0 0.3rem !important;
+  padding: 0.7rem 0;
+}
