@@ -1,6 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import fetchMissionData from '../../apis/missionsApi';
-import { missionEffectAfterFetch } from '../effects/missionEffects';
+import {
+  missionEffectAfterFetch,
+  reservationEffect,
+} from '../effects/missionEffects';
 
 const initialState = {
   missions: [],
@@ -11,24 +14,13 @@ const missionSlice = createSlice({
   name: 'mission',
   initialState,
   reducers: {
-    missionJoined: (state, { payload }) => ({
+    missionJoined: (state, action) => ({
       ...state,
-      missions: state.missions.map((mission) => {
-        if (mission.mission_id !== payload) {
-          return mission;
-        }
-        return { ...mission, reserved: true };
-      }),
+      missions: reservationEffect(state, action),
     }),
-
-    missionLeaved: (state, { payload }) => ({
+    missionLeaved: (state, action) => ({
       ...state,
-      missions: state.missions.map((mission) => {
-        if (mission.mission_id !== payload) {
-          return mission;
-        }
-        return { ...mission, reserved: false };
-      }),
+      missions: reservationEffect(state, action),
     }),
   },
   extraReducers: {

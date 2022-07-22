@@ -7,8 +7,12 @@ export const rocketEffectAfterFetch = ({ payload }) => payload.map(
   }),
 );
 
-export const selectAllJoinedRockets = ({ rockets }) => ({
-  rockets: rockets.rockets.filter(({ reserved }) => reserved),
-});
+export const reservationEffect = ({ rockets }, { payload }) => rockets.map(
+  (rocket) => (
+    rocket.id !== payload
+      ? rocket
+      : { ...rocket, reserved: !rocket.reserved }
+  ),
+);
 
 export const getState = ({ rockets }) => rockets;

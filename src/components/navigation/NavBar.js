@@ -1,24 +1,15 @@
 import { NavLink } from 'react-router-dom';
 import React, { useState } from 'react';
-import Logo from '../../assets/logo.png';
+import relativeUrl from '../../utils/commons';
 
+import Logo from '../../assets/logo.png';
 import styles from './Navbar.module.css';
 
-const getRelativeUrl = (url = window.location.href) => {
-  if (url.includes('/missions')) {
-    return 'miss';
-  }
-  if (url.includes('/profile')) {
-    return 'prof';
-  }
-  return 'rock';
-};
-
 const NavBar = () => {
-  const [active, setActive] = useState(getRelativeUrl());
+  const [active, setActive] = useState(relativeUrl());
 
   const setActiveTab = ({ target }) => {
-    setActive(getRelativeUrl(target.href));
+    setActive(relativeUrl(target.href));
   };
 
   return (
@@ -51,7 +42,7 @@ const NavBar = () => {
               Missions
             </NavLink>
           </li>
-          <div className={styles['vertical-line']} />
+          <li className={styles['vertical-line']} />
           <li>
             <NavLink
               to="/profile"

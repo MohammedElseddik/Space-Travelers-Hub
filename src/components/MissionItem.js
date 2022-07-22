@@ -11,7 +11,7 @@ const MissionItem = ({ mission }) => {
     mission_name, mission_id, description, reserved,
   } = mission;
 
-  const joinMissionHandler = () => {
+  const onJoin = () => {
     dispatch(missionJoined(mission_id));
   };
 
@@ -47,7 +47,7 @@ const MissionItem = ({ mission }) => {
           <button
             type="button"
             className={styles['join-btn']}
-            onClick={joinMissionHandler}
+            onClick={onJoin}
           >
             Join Mission
           </button>

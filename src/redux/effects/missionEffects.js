@@ -6,6 +6,10 @@ export const missionEffectAfterFetch = ({ payload }) => payload.map(
   }),
 );
 
-export const selectAllJoined = ({ missions }) => ({
-  missions: missions.missions.filter(({ reserved }) => reserved),
-});
+export const reservationEffect = ({ missions }, { payload }) => missions.map(
+  (mission) => (
+    mission.mission_id !== payload
+      ? mission
+      : { ...mission, reserved: !mission.reserved }
+  ),
+);
